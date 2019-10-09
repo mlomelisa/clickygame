@@ -8,30 +8,36 @@ import Thumbnail from './thumbnail';
 
 class CharactersContainer extends Component {
 state = {
-  characters
+  characters,
+  count: 0,
+  topcount: 0
 }
 
 
+
+// handleIncrement increments this.state.count by 1
+handleIncrement = () => {
+  // We always use the setState method to update a component's state
+  this.setState({ count: this.state.count + 1 } );
+};
+
+
 render() {
+  console.log(this.state.count)
   return (
     <div>
-   <Header />
+   <Header count={this.state.count} topcount={this.state.topcount} />
     <Jumbotron />
-
     <Container>
-     
-     
-      {this.state.characters.map(character => {
-        console.log(character)
+      {this.state.characters.map(character => {        
         return(
-          <div key={character.id}>
-          <Thumbnail src={character.img} />
+          
+          <div key={character.id} onClick={this.handleIncrement}>
+          <Thumbnail src={character.img}  checked={character.checked}/>
         </div>
         )
       }  
     )}
-
-
   </ Container>
   </div>
   ) 

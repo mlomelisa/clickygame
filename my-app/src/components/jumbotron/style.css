@@ -2,4 +2,7 @@
   min-height: 300px;
   padding-top: 100px;
   background: url(./wallpaper.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }

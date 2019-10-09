@@ -1,14 +1,12 @@
 import React from "react";
 import "./style.css";
-import { Container, Row, Col } from "../Grid";
 
 
+function Header(props) {
 
-function Header() {
   return (
-   
-          <nav className="navbar sticky">
-       
+    
+          <nav className="navbar container-fluid">  
             <div className='header'>
             <a href="/">Clicky Game</a>
             </div>
@@ -16,11 +14,11 @@ function Header() {
             Click an image to begin!
             </div >
             <div className='header'> 
-             Score:0 |Top Score:0
+            <span> Score: {props.count} |Top Score: {props.topcount}</span>
             </div>
         
         </nav>
-  )
+    )
 }
 
 export default Header;
