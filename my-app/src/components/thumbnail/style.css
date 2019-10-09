@@ -4,7 +4,16 @@ div.thumbnail {
   background-position: center;
   width: 20%;
   padding-top: 20%;
-  display: inline;
+  border: 1px solid white;
+  float: left;
 }
 
+div.thumbnail:hover {
+  
+  
+  border: 1px solid aqua;
+}
 
+div {
+  margin: 4px 4px 4px 4px; 
+}

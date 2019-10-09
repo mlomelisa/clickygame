@@ -7,17 +7,19 @@ import { Container, Row, Col } from "../Grid";
 function Header() {
   return (
    
-          <div>
-            <Col >
-            <h2>Clicky Game</h2>
-            </Col>
-            <Col>  
-            <h2> Click an image to begin!  </h2> 
-            </Col> 
-            <Col>  
-            <h2>Score:0 |Top Score:0</h2>
-            </Col> 
-            </div>   
+          <nav className="navbar sticky">
+       
+            <div className='header'>
+            <a href="/">Clicky Game</a>
+            </div>
+            <div className='header'>
+            Click an image to begin!
+            </div >
+            <div className='header'> 
+             Score:0 |Top Score:0
+            </div>
+        
+        </nav>
   )
 }
 

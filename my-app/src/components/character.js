@@ -1,35 +1,42 @@
 import React, { Component } from "react";
-import Card from "./Card";
-import { Container, Row, Col } from "./Grid";
 import characters from '../characters.json';
-import Header from '../components/Header';
-import Wrapper from '../components/Wrapper';
-import Thumbnail from "./thumbnail";
+import {Col,Row,Container} from './Grid';
+import Header from './Header';
+import Jumbotron from './jumbotron';
+import Thumbnail from './thumbnail';
 
 
+class CharactersContainer extends Component {
+state = {
+  characters
+}
 
 
-export function CharactersContainer({
-  
- 
+render() {
   return (
-    <li className="list-group-item">
-      <Container>
-        <Row>
-          <Col size="xs-4 sm-2">
-          {this.state.characters.map(character => (
-            <Thumbnail src={thumbnail} />
-            )
-            )}
-          </Col>
+    <div>
+   <Header />
+    <Jumbotron />
 
-        
+    <Container>
+     
+     
+      {this.state.characters.map(character => {
+        console.log(character)
+        return(
+          <div key={character.id}>
+          <Thumbnail src={character.img} />
+        </div>
+        )
+      }  
+    )}
 
-        </Row>
-      </Container>
-    </li>
-  );
-})
+
+  </ Container>
+  </div>
+  ) 
+ }
+}
 
 
 export default CharactersContainer;

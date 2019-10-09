@@ -10,3 +10,19 @@
     weight: 200;
   
   }
+
+  div.header {
+    float: left;
+    
+  }
+nav {
+    background: red;
+    color: #ffff;
+    
+}
+
+a {
+  font-weight: 700;
+  color:  #ffff;
+ 
+}
