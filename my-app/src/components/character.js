@@ -13,13 +13,25 @@ state = {
   topcount: 0
 }
 
+functionSort = (characters) => {
+  
+  characters = characters.sort(() => Math.random() - 0.5)
+
+  return characters
+}
 
 
-// handleIncrement increments this.state.count by 1
-handleIncrement = () => {
-  // We always use the setState method to update a component's state
-  this.setState({ count: this.state.count + 1 } );
-};
+handleChange = event => {
+  event.preventDefault();
+  
+    this.setState({
+      count: this.state.count + 1,
+      checked: "true",
+      characters: this.functionSort(this.state.characters)
+     })      
+  
+}
+
 
 
 render() {
@@ -32,8 +44,8 @@ render() {
       {this.state.characters.map(character => {        
         return(
           
-          <div key={character.id} onClick={this.handleIncrement}>
-          <Thumbnail src={character.img}  checked={character.checked}/>
+          <div key={character.id} onClick={this.handleChange} >
+          <Thumbnail src={character.img} ischecked={character.checked}/>
         </div>
         )
       }  

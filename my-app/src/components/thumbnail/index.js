@@ -5,10 +5,11 @@ import "./style.css";
 // It will always keep square proportions at any size without the image warping
 // The "role" and "aria label" are there to identify the element's purpose as an image for accessibility purposes
 function Thumbnail(props) {
+ console.log(props)
   return (
     <div 
       className="thumbnail click-item shake"
-      checked={props.checked}
+      ischecked={props.ischecked}
       role="img"
       aria-label="click item"
       style={{
