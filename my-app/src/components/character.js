@@ -15,6 +15,18 @@ state = {
   ischecked: 0
 }
 
+handleChange2 = (event) => {
+
+    this.setState({
+      selected: [],
+      count: 0,
+      characters: this.functionSort(this.state.characters)
+     })
+
+     return console.log(this.state.count)
+}
+
+
 functionSort = (characters) => {
   
   characters = characters.sort(() => Math.random() - 0.5)
@@ -30,12 +42,16 @@ findId = (selected, userid) => {
   }
   
   if (selected.find(isSelected)) {
+    this.handleChange2()
     alert('Game Over')
+   
+    
+    
     
   } else {
     selected = [ ...selected, userid ]
-    console.log(selected)
-   return selected  
+   
+   return  selected  
   }
 
 }
@@ -45,15 +61,12 @@ findId = (selected, userid) => {
 handleChange = (event) => {
   event.preventDefault();
 
-  
     this.setState({
-     // selected: [ ...this.state.selected, event.currentTarget.dataset.id ],
       selected: this.findId(this.state.selected, event.currentTarget.dataset.id),
       count: this.state.count + 1,
       ischecked: event.currentTarget.dataset.id,
       characters: this.functionSort(this.state.characters)
-     })      
-    
+     })       
 }
 
 render() {
