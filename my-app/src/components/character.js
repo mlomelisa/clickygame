@@ -42,9 +42,9 @@ findId = (selected, userid) => {
   }
   
   if (selected.find(isSelected)) {
-    this.handleChange2()
-    alert('Game Over')
    
+    alert('Game Over')
+    return  selected
     
     
     
