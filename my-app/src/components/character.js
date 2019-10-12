@@ -42,14 +42,26 @@ findId = (selected, userid) => {
   }
   
   if (selected.find(isSelected)) {
-   
-    alert('Game Over')
-    this.setState({
-      count: 0
-      })
-    return  (selected = [])
-    
-    
+   var topScore = this.state.topcount
+   var countNew = this.state.count
+        if ( topScore > countNew) {
+
+          alert('Game Over')
+          this.setState({
+            count: 0,
+            topcount: this.state.topcount
+            })
+          return  (selected = [])
+          
+          
+        } else {
+          alert('Game Over')
+          this.setState({
+            count: 0,
+            topcount: countNew
+            })
+          return  (selected = [])
+        }    
     
   } else {
     selected = [ ...selected, userid ]
