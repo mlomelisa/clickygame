@@ -22,3 +22,14 @@ a {
   color:  #ffff;
  
 }
+
+div.container-fluid {
+ position: fixed;
+ padding: 0;
+ margin: 0;
+}
+
+.navbar {
+  position: absolute;
+ padding-left: 0;
+}
