@@ -36,7 +36,7 @@ functionSort = (characters) => {
 
 
 findId = (selected, userid) => {
- 
+ console.log(selected)
   function isSelected(item) {
     return item === userid;
   }
@@ -44,13 +44,18 @@ findId = (selected, userid) => {
   if (selected.find(isSelected)) {
    
     alert('Game Over')
-    return  selected
+    this.setState({
+      count: 0
+      })
+    return  (selected = [])
     
     
     
   } else {
     selected = [ ...selected, userid ]
-   
+    this.setState({
+    count: this.state.count + 1
+    })
    return  selected  
   }
 
@@ -63,7 +68,6 @@ handleChange = (event) => {
 
     this.setState({
       selected: this.findId(this.state.selected, event.currentTarget.dataset.id),
-      count: this.state.count + 1,
       ischecked: event.currentTarget.dataset.id,
       characters: this.functionSort(this.state.characters)
      })       
