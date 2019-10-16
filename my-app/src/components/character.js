@@ -23,7 +23,7 @@ handleChange2 = (event) => {
       characters: this.functionSort(this.state.characters)
      })
 
-     return console.log(this.state.count)
+   //  return console.log(this.state.count)
 }
 
 
