@@ -32,8 +32,8 @@ findId = (selected, userid) => {
   }
   
   if (selected.find(isSelected)) {
-   var topScore = this.state.topcount
-   var countNew = this.state.count
+   let topScore = this.state.topcount
+   let countNew = this.state.count
         if ( topScore > countNew) {
 
           alert('Game Over')
