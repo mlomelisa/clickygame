@@ -15,16 +15,6 @@ state = {
   ischecked: 0
 }
 
-handleChange2 = (event) => {
-
-    this.setState({
-      selected: [],
-      count: 0,
-      characters: this.functionSort(this.state.characters)
-     })
-
-   //  return console.log(this.state.count)
-}
 
 
 functionSort = (characters) => {
